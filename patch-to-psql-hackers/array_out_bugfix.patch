@@ -1,0 +1,13 @@
+diff --git a/src/backend/utils/adt/arrayfuncs.c b/src/backend/utils/adt/arrayfuncs.c
+index 0c6c9da..e40775e 100644
+--- a/src/backend/utils/adt/arrayfuncs.c
++++ b/src/backend/utils/adt/arrayfuncs.c
+@@ -1163,7 +1163,7 @@ array_out(PG_FUNCTION_ARGS)
+ 	 * count total number of curly braces in output string
+ 	 */
+ 	for (i = j = 0, k = 1; i < ndim; i++)
+-		k *= dims[i], j += k;
++		j += k, k *= dims[i];
+ 
+ 	dims_str[0] = '\0';
+ 
